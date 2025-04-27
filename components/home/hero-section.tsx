@@ -91,7 +91,7 @@ export function HeroSection() {
             {/* Placeholder for app screenshots */}
             <div className="aspect-[9/16] bg-card rounded-[2.5rem] border-8 border-accent/10 overflow-hidden shadow-2xl purple-glow relative">
               <img 
-                src="https://i.imgur.com/H0MBF6O.jpeg" 
+                src="https://i.imgur.com/LmZhvhD.jpeg" 
                 alt="App Screenshot" 
                 className="h-full w-full object-cover"
               />

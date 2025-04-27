@@ -4,6 +4,7 @@ export type Feature = {
   icon: string;
   imagePosition: "left" | "right";
   imagePlaceholder: string;
+  imageUrl?: string;
   quote?: string;
 };
 
@@ -14,6 +15,7 @@ export const appFeatures: Feature[] = [
     icon: "target",
     imagePosition: "right",
     imagePlaceholder: "Goal setting screenshot",
+    imageUrl: "https://i.imgur.com/TvKHOv9.jpeg",
     quote: "A goal without a plan is just a wish.",
   },
   {
@@ -22,6 +24,7 @@ export const appFeatures: Feature[] = [
     icon: "smile",
     imagePosition: "left",
     imagePlaceholder: "Affirmations screenshot",
+    imageUrl: "http://i.imgur.com/L84Mmjz.jpeg",
     quote: "Speak to your soul with words of power and grace.",
   },
   {
@@ -30,6 +33,7 @@ export const appFeatures: Feature[] = [
     icon: "heart",
     imagePosition: "right",
     imagePlaceholder: "Mood tracking screenshot",
+    imageUrl: "https://i.imgur.com/sDc12HJ.jpeg",
     quote: "Your emotions are the gateway to your manifestations.",
   },
   {
@@ -38,6 +42,7 @@ export const appFeatures: Feature[] = [
     icon: "book",
     imagePosition: "left",
     imagePlaceholder: "Journal screenshot",
+    imageUrl: "https://i.imgur.com/jsTHrLb.png",    
     quote: "When you write down your dreams, they become goals.",
   },
   {
@@ -46,6 +51,7 @@ export const appFeatures: Feature[] = [
     icon: "eye",
     imagePosition: "right",
     imagePlaceholder: "Meditation screenshot",
+    imageUrl: "https://i.imgur.com/Vpj3e1S.jpeg",
     quote: "What you can visualize, you can materialize.",
   },
   {
@@ -54,6 +60,7 @@ export const appFeatures: Feature[] = [
     icon: "lightbulb",
     imagePosition: "left",
     imagePlaceholder: "Tips screenshot",
+    imageUrl: "https://i.imgur.com/YCjGU64.jpeg",
     quote: "Knowledge is the seed from which manifestation grows.",
   },
 ];

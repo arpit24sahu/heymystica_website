@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { appFeatures } from "@/lib/config/features";
 import * as Icons from "lucide-react";
@@ -35,6 +36,7 @@ export function FeaturesSection() {
               icon={feature.icon}
               imagePosition={feature.imagePosition}
               imagePlaceholder={feature.imagePlaceholder}
+              imageUrl={feature.imageUrl}
               quote={feature.quote}
             />
           ))}
@@ -50,6 +52,7 @@ interface FeatureRowProps {
   icon: string;
   imagePosition: "left" | "right";
   imagePlaceholder: string;
+  imageUrl?: string;
   quote?: string;
 }
 
@@ -59,6 +62,7 @@ function FeatureRow({
   icon,
   imagePosition,
   imagePlaceholder,
+  imageUrl,
   quote,
 }: FeatureRowProps) {
   const [contentRef, contentInView] = useInView({
@@ -89,13 +93,24 @@ function FeatureRow({
         )}
       >
         <div className="relative w-full max-w-sm mx-auto">
-          {/* Placeholder for feature screenshot */}
           <div className="aspect-[9/16] bg-card rounded-xl overflow-hidden border border-accent/30 shadow-xl">
-            <div className="h-full w-full bg-gradient-to-bl from-secondary/40 to-primary/80 flex items-center justify-center">
-              <span className="text-xl text-accent/80 font-decorative text-center px-4">
-                {imagePlaceholder}
-              </span>
-            </div>
+            {imageUrl ? (
+              <div className="relative h-full w-full">
+                <Image
+                  src={imageUrl}
+                  alt={`${title} feature`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 384px"
+                />
+              </div>
+            ) : (
+              <div className="h-full w-full bg-gradient-to-bl from-secondary/40 to-primary/80 flex items-center justify-center">
+                <span className="text-xl text-accent/80 font-decorative text-center px-4">
+                  {imagePlaceholder}
+                </span>
+              </div>
+            )}
           </div>
           
           {/* Decorative elements */}
