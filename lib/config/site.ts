@@ -10,8 +10,8 @@ export const siteConfig = {
     facebook: "https://facebook.com/heymystica",
   },
   appLinks: {
-    ios: "https://apps.apple.com/app/heymystica",
-    android: "https://play.google.com/store/apps/details?id=com.heymystica",
+    ios: "https://apps.apple.com/us/app/heymystica-manifestation-app/id6744979873?platform=iphone",
+    android: "https://play.google.com/store/apps/details?id=com.arpit.manifest",
   },
 };
 

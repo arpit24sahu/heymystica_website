@@ -6,6 +6,7 @@ import { Apple, Cuboid as Android, Star, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/config/site";
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export function DownloadSection() {
@@ -86,24 +87,28 @@ export function DownloadSection() {
               <motion.div variants={item} className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <Link 
                   href={siteConfig.appLinks.ios} 
-                  className={cn(
-                    "w-full sm:w-auto",
-                    "bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent/70 text-primary rounded-lg px-6 py-3 flex items-center justify-center space-x-3 font-medium shadow-lg transition-all duration-300 hover:shadow-accent/20 hover:shadow-xl"
-                  )}
+                  className="transition-all duration-300 hover:opacity-90 hover:scale-105"
                 >
-                  <Apple className="h-6 w-6" />
-                  <span>iOS App</span>
+                  <Image
+                    src="https://i.imgur.com/sbF9WKy.png"
+                    alt="Download on the App Store"
+                    width={180}
+                    height={60}
+                    className="h-auto"
+                  />
                 </Link>
                 
                 <Link 
                   href={siteConfig.appLinks.android}
-                  className={cn(
-                    "w-full sm:w-auto",
-                    "bg-gradient-to-r from-secondary to-primary hover:from-secondary/90 hover:to-primary/90 text-primary-foreground rounded-lg px-6 py-3 flex items-center justify-center space-x-3 font-medium shadow-lg transition-all duration-300 hover:shadow-secondary/20 hover:shadow-xl"
-                  )}
+                  className="transition-all duration-300 hover:opacity-90 hover:scale-105"
                 >
-                  <Android className="h-6 w-6" />
-                  <span>Android App</span>
+                  <Image
+                    src="https://i.imgur.com/cNF62xD.png"
+                    alt="Get it on Google Play"
+                    width={200}
+                    height={60}
+                    className="h-auto"
+                  />
                 </Link>
               </motion.div>
             </div>
@@ -121,6 +126,13 @@ export function DownloadSection() {
                         App Screen 1
                       </span>
                     </div>
+                    <Image 
+                      src="https://i.imgur.com/LmZhvhD.jpeg"
+                      alt="HeyMystica App Screen"
+                      fill
+                      className="object-cover rounded-2xl"
+                      priority
+                    />
                     <div className="absolute top-4 left-1/2 -translate-x-1/2 w-1/3 h-4 bg-black rounded-full"></div>
                   </div>
                 </div>
@@ -132,6 +144,13 @@ export function DownloadSection() {
                         App Screen 2
                       </span>
                     </div>
+                    <Image 
+                      src="https://i.imgur.com/LmZhvhD.jpeg"
+                      alt="HeyMystica App Screen"
+                      fill
+                      className="object-cover rounded-2xl"
+                      priority
+                    />
                     <div className="absolute top-4 left-1/2 -translate-x-1/2 w-1/3 h-4 bg-black rounded-full"></div>
                   </div>
                 </div>
