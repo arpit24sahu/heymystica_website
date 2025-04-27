@@ -1,0 +1,131 @@
+/* SUPER FORCED PURPLE THEME 
+   This file contains only !important rules to override any other styling */
+
+html, body, #__next, main, div {
+  background-color: #2D0B4C !important;
+  color: #F8F7FF !important;
+}
+
+body {
+  background: linear-gradient(135deg, #2D0B4C 0%, #4A148C 100%) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #D4AF37 !important;
+  font-weight: bold !important;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.3) !important;
+}
+
+p, span, label, li, td, th, div, pre, code {
+  color: #F8F7FF !important;
+}
+
+button, .btn, [type="button"], [type="submit"], [type="reset"] {
+  background-color: #4A148C !important;
+  color: #F8F7FF !important;
+  border-color: #9966CC !important;
+}
+
+button:hover, .btn:hover {
+  background-color: #6A1B9A !important;
+  box-shadow: 0 0 15px #9966CC !important;
+}
+
+a, a * {
+  color: #D4AF37 !important;
+  text-decoration: none !important;
+}
+
+a:hover, a:hover * {
+  color: #FFD700 !important;
+  text-decoration: underline !important;
+}
+
+/* Target all containers */
+header, footer, nav, aside, section, article, main, .container, 
+[class*="container"], [class*="wrapper"], [class*="layout"] {
+  background-color: transparent !important;
+}
+
+/* Target card elements */
+.card, [class*="card"], 
+div[class*="card"], 
+div[class*="box"],
+[class*="panel"],
+[class*="modal"],
+[class*="dialog"],
+[class*="dropdown"],
+[class*="popover"] {
+  background-color: #4A148C !important;
+  border-color: #6A1B9A !important;
+  box-shadow: 0 0 20px rgba(74, 20, 140, 0.5) !important;
+  color: #F8F7FF !important;
+}
+
+/* Target all background classes */
+[class*="bg-"], .bg-white, .bg-gray, .bg-black, .bg-primary, .bg-secondary {
+  background-color: #2D0B4C !important;
+}
+
+[class*="bg-primary"] {
+  background-color: #4A148C !important;
+}
+
+[class*="bg-secondary"] {
+  background-color: #6A1B9A !important;
+}
+
+[class*="bg-accent"] {
+  background-color: #9966CC !important;
+}
+
+/* Target all text color classes */
+.text-white, .text-gray, .text-black, 
+[class*="text-gray"], [class*="text-slate"], [class*="text-neutral"],
+[class*="text-zinc"], [class*="text-stone"] {
+  color: #F8F7FF !important;
+}
+
+.text-yellow, .text-amber, .text-orange, .text-gold, 
+[class*="text-yellow"], [class*="text-amber"], [class*="text-orange"], 
+[class*="text-gold"] {
+  color: #D4AF37 !important;
+}
+
+[class*="text-purple"], [class*="text-violet"], 
+[class*="text-indigo"], [class*="text-fuchsia"] {
+  color: #9966CC !important;
+}
+
+/* Form elements */
+input, select, textarea {
+  background-color: #1A0033 !important;
+  color: #F8F7FF !important;
+  border-color: #4A148C !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #9966CC !important;
+  box-shadow: 0 0 0 2px rgba(153, 102, 204, 0.5) !important;
+}
+
+/* Custom classes */
+.gradient-text {
+  background: linear-gradient(to right, #D4AF37, #FFD700) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+.mystic-bg {
+  background: linear-gradient(to bottom right, #2D0B4C, #4A148C) !important;
+}
+
+.accent-bg {
+  background: linear-gradient(to right, #D4AF37, #FFD700) !important;
+}
+
+/* Ensure images aren't affected */
+img, svg {
+  filter: none !important;
+} 
