@@ -146,9 +146,9 @@ const config: Config = {
   },
   plugins: [
     require('tailwindcss-animate'),
-    function ({ addUtilities, theme }) {
+    function ({ addUtilities, theme }: { addUtilities: any; theme: (path: string) => any }) {
       const textShadows = theme('textShadow');
-      const utilities = {};
+      const utilities: Record<string, any> = {};
       
       if (textShadows) {
         Object.entries(textShadows).forEach(([key, value]) => {

@@ -5,23 +5,12 @@ import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { appFeatures } from "@/lib/config/features";
-import { Icon as Icons } from "lucide-react";
+import * as Icons from "lucide-react";
 import dynamic from "next/dynamic";
 
 // Dynamically import Lucide icons with error handling
 const DynamicIcon = ({ name, ...props }: { name: string; [key: string]: any }) => {
-  // Ensure the icon name exists in lucide-react
-  const IconComponent = dynamic(
-    async () => {
-      const mod = await import("lucide-react");
-      // Check if the icon exists, fallback to a default if not found
-      return mod[name as keyof typeof Icons] || mod.HelpCircle;
-    },
-    {
-      loading: () => <div className="w-6 h-6 bg-accent/20 rounded-md animate-pulse" />,
-      ssr: false,
-    }
-  );
+  const IconComponent = ((Icons as unknown) as Record<string, React.FC<any>>)[name] || Icons.HelpCircle;
 
   return <IconComponent {...props} />;
 };

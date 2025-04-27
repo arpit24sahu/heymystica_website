@@ -62,6 +62,22 @@ const Blog = defineDocumentType(() => ({
   },
 }));
 
+// Define rehype pretty code options
+const rehypePrettyCodeOptions = {
+  theme: 'github-dark',
+  onVisitLine(node: any) {
+    if (node.children.length === 0) {
+      node.children = [{ type: 'text', value: ' ' }];
+    }
+  },
+  onVisitHighlightedLine(node: any) {
+    node.properties.className.push('line--highlighted');
+  },
+  onVisitHighlightedWord(node: any) {
+    node.properties.className = ['word--highlighted'];
+  },
+};
+
 export default makeSource({
   contentDirPath: 'content',
   documentTypes: [Blog],
@@ -72,23 +88,9 @@ export default makeSource({
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
       rehypeSlug,
-      [
-        rehypePrettyCode,
-        {
-          theme: 'github-dark',
-          onVisitLine(node) {
-            if (node.children.length === 0) {
-              node.children = [{ type: 'text', value: ' ' }];
-            }
-          },
-          onVisitHighlightedLine(node) {
-            node.properties.className.push('line--highlighted');
-          },
-          onVisitHighlightedWord(node) {
-            node.properties.className = ['word--highlighted'];
-          },
-        },
-      ],
+      // Apply rehypePrettyCode with type casting to avoid TypeScript issues
+      // @ts-ignore - Force compatibility between different vfile versions
+      [rehypePrettyCode, rehypePrettyCodeOptions],
     ],
   },
 });
