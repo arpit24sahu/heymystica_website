@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/theme-provider';
 import { siteConfig } from '@/lib/config/site';
 import PurpleThemeEnforcer from '@/components/purple-theme-enforcer';
+import { Analytics } from "@vercel/analytics/react";
 
 const cinzel = Cinzel({
   subsets: ['latin'],
@@ -217,6 +218,7 @@ export default function RootLayout({
           }}>
             {children}
           </div>
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>

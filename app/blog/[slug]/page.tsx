@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { allBlogs } from "contentlayer/generated";
 import { ArrowLeft } from "lucide-react";
 import { SiteLayout } from "@/components/layout/site-layout";
@@ -84,9 +85,14 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
             </div>
 
             <div className="aspect-video rounded-lg overflow-hidden relative mb-10">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/60 to-secondary/40 flex items-center justify-center text-lg font-decorative text-accent/80">
-                Blog Feature Image
-              </div>
+              <Image
+                src={blog.image}
+                alt={`${blog.title} feature image`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 768px"
+                priority
+              />
             </div>
 
             <div className="prose prose-lg dark:prose-invert max-w-none">

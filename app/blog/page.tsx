@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { allBlogs } from "contentlayer/generated";
 import { compareDesc } from "date-fns";
 
@@ -52,6 +53,15 @@ export default function BlogPage() {
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/60 to-secondary/40 flex items-center justify-center text-lg font-decorative text-accent/80">
                       Featured Blog Image
                     </div>
+
+                    <Image
+                      src={blogs[0].image}
+                      alt={`${blogs[0].title} featured image`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      priority
+                    />
                   </div>
                   
                   <div className="flex flex-col justify-center">
@@ -95,6 +105,14 @@ export default function BlogPage() {
                           <div className="absolute inset-0 bg-gradient-to-br from-primary/60 to-secondary/40 flex items-center justify-center text-lg font-decorative text-accent/80">
                             Blog Image
                           </div>
+
+                          <Image
+                            src={blog.image}
+                            alt={`${blog.title} image`}
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          />
                         </div>
                         
                         <CardHeader className="pt-6">
