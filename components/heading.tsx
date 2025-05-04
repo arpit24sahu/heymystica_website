@@ -1,3 +1,4 @@
+import React from 'react';
 import { cn } from '@/lib/utils';
 
 interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
@@ -5,8 +6,16 @@ interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
   children: React.ReactNode;
 }
 
+const headingElements = {
+  1: 'h1',
+  2: 'h2',
+  3: 'h3',
+  4: 'h4',
+  5: 'h5',
+  6: 'h6',
+} as const;
+
 export function Heading({ level, children, className, ...props }: HeadingProps) {
-  const Tag = `h${level}` as keyof JSX.IntrinsicElements;
   const baseStyles = 'font-bold text-accent';
   const levelStyles = {
     1: 'text-4xl md:text-5xl mb-6',
@@ -17,12 +26,14 @@ export function Heading({ level, children, className, ...props }: HeadingProps) 
     6: 'text-base md:text-lg mb-2',
   };
 
-  return (
-    <Tag
-      className={cn(baseStyles, levelStyles[level], className)}
-      {...props}
-    >
-      {children}
-    </Tag>
+  const Element = headingElements[level];
+
+  return React.createElement(
+    Element,
+    {
+      className: cn(baseStyles, levelStyles[level], className),
+      ...props,
+    },
+    children
   );
 } 
