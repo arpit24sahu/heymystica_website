@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "HeyMystica",
-  description: "Manifest your dreams and desires with HeyMystica - available on iOS and Android",
+  description: "Manifest your dreams and desires with HeyMystica - Your spiritual journey companion for manifestation, personal growth, and positive transformation. Available on iOS and Android.",
   url: "https://heymystica.com",
   ogImage: "https://heymystica.com/og.jpg",
   links: {
@@ -12,6 +12,28 @@ export const siteConfig = {
   appLinks: {
     ios: "https://apps.apple.com/us/app/heymystica-manifestation-app/id6744979873?platform=iphone",
     android: "https://play.google.com/store/apps/details?id=com.arpit.manifest",
+  },
+  // SEO specific settings
+  seo: {
+    defaultTitle: "HeyMystica - Manifest Your Dreams & Transform Your Life",
+    defaultDescription: "Your spiritual journey companion for manifestation, personal growth, and positive transformation. Available on iOS and Android.",
+    keywords: [
+      "manifestation",
+      "personal growth",
+      "spiritual journey",
+      "law of attraction",
+      "meditation",
+      "affirmations",
+      "self-improvement",
+      "mindfulness",
+      "positive thinking",
+      "spiritual growth"
+    ],
+    author: "HeyMystica",
+    publisher: "HeyMystica",
+    robots: "index, follow",
+    language: "en-US",
+    locale: "en_US",
   },
 };
 

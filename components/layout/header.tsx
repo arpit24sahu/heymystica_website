@@ -60,12 +60,9 @@ export function Header() {
         </nav>
 
         <div className="hidden md:flex items-center space-x-4">
-          <Link 
-            href="/#download" 
-            className={cn(
-              buttonVariants({ variant: "outline", size: "sm" }),
-              "border-accent/60 text-accent hover:border-accent hover:bg-accent/10"
-            )}
+          <Link
+            href="/#download"
+            className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium rounded-md px-4 py-2 border border-yellow-500 bg-white text-yellow-600 hover:bg-yellow-100 hover:text-yellow-700 transition-colors"
           >
             Download App
           </Link>
@@ -73,7 +70,9 @@ export function Header() {
 
         <Sheet>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon" aria-label="Menu">
+            <Button variant="ghost" size="icon" aria-label="Menu"
+              className="text-yellow-700 hover:bg-yellow-100 hover:text-yellow-800"
+            >
               <Menu className="h-5 w-5" />
             </Button>
           </SheetTrigger>

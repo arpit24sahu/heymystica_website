@@ -82,7 +82,7 @@ export default function BlogPage() {
                     <Button 
                       variant="ghost" 
                       size="sm" 
-                      className="text-accent/80 pl-0 w-fit hover:text-accent hover:bg-transparent"
+                      className="text-accent/80 pl-4 w-fit hover:text-accent hover:bg-transparent"
                     >
                       Read article <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>

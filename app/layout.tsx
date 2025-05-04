@@ -7,6 +7,8 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { siteConfig } from '@/lib/config/site';
 import PurpleThemeEnforcer from '@/components/purple-theme-enforcer';
 import { Analytics } from "@vercel/analytics/react";
+import { StructuredData } from '@/components/structured-data';
+import { Breadcrumbs } from '@/components/breadcrumbs';
 
 const cinzel = Cinzel({
   subsets: ['latin'],
@@ -28,6 +30,7 @@ const alegreya = Alegreya({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,
@@ -42,6 +45,13 @@ export const metadata: Metadata = {
     'meditation',
     'journal',
     'law of attraction',
+    'spiritual growth',
+    'mindfulness',
+    'positive thinking',
+    'self-help',
+    'personal development',
+    'spiritual journey',
+    'manifestation techniques',
   ],
   authors: [
     {
@@ -50,6 +60,18 @@ export const metadata: Metadata = {
     },
   ],
   creator: 'HeyMystica',
+  publisher: 'HeyMystica',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -79,6 +101,12 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
+  alternates: {
+    canonical: siteConfig.url,
+  },
+  verification: {
+    google: 'your-google-site-verification-code', // Add your Google Search Console verification code
+  },
 };
 
 // Direct CSS overrides to ensure purple background and gold/white text
@@ -114,6 +142,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning style={purpleStyles.html} className="purple-theme">
       <head>
         <meta name="theme-color" content="#2D0B4C" />
+        <StructuredData />
         <style dangerouslySetInnerHTML={{ __html: `
           :root {
             --background: 45 11 76;
@@ -216,6 +245,7 @@ export default function RootLayout({
             minHeight: '100vh',
             color: '#F8F7FF'
           }}>
+            <Breadcrumbs />
             {children}
           </div>
           <Analytics />

@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /checkout/
+Disallow: /cart/
+Disallow: /account/
+Disallow: /private/
+Disallow: /dashboard/
+
+Sitemap: https://heymystica.com/sitemap.xml 

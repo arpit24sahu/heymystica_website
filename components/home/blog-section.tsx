@@ -84,7 +84,7 @@ export function BlogSection({ featuredBlogs }: BlogSectionProps) {
                       <Button 
                         variant="ghost" 
                         size="sm" 
-                        className="text-accent/80 pl-0 hover:text-accent hover:bg-transparent"
+                        className="text-accent/80 pl-4 hover:text-accent hover:bg-transparent"
                       >
                         Read more <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
